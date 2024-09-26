@@ -7,14 +7,16 @@ terraform {
   }
 }
 
-variable "subscription_id" {
-  type      = string
-  sensitive = true
+variable "env123" {
+  type        = string
 }
+variable "subscription_id" {}
+
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
+
   subscription_id = var.subscription_id
 }
 
@@ -23,6 +25,7 @@ resource "azurerm_resource_group" "example-rg" {
   location = "West Europe"
   tags = {
     environment = "dev"
+    dev123 = var.env123
   }
 }
 
