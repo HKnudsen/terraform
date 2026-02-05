@@ -38,7 +38,7 @@ resource "azurerm_virtual_network" "example-vn" {
   name                = "example-network"
   resource_group_name = azurerm_resource_group.example-rg.name
   location            = azurerm_resource_group.example-rg.location
-  address_space       = ["10.123.0.0/16"]
+  address_space       = ["xx.xxx.x.x/16"]
 
   tags = {
     environment = "dev"
@@ -50,7 +50,7 @@ resource "azurerm_subnet" "example-subnet" {
   name                 = "example-subnet"
   resource_group_name  = azurerm_resource_group.example-rg.name
   virtual_network_name = azurerm_virtual_network.example-vn.name
-  address_prefixes     = ["10.123.1.0/24"]
+  address_prefixes     = ["xx.xxx.x.x/24"]
 }
 
 resource "azurerm_network_security_group" "example-nsg" {
